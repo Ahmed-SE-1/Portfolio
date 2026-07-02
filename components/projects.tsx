@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/site-data";
+import { ProjectPreview } from "@/components/project-preview";
 
 const spanClass: Record<string, string> = {
   large: "md:col-span-4",
@@ -42,35 +43,37 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.06 }}
-              className={`group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 ${spanClass[project.size]}`}
+              className={`group relative overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-foreground/20 hover:shadow-lg hover:shadow-black/10 ${spanClass[project.size]}`}
             >
-              {/* Placeholder visual — swap for a next/image project screenshot */}
-              <div className="relative mb-6 flex h-40 items-center justify-center overflow-hidden rounded-xl border border-border bg-gradient-to-br from-accent-violet/15 via-transparent to-accent-coral/15">
-                <span className="font-mono text-4xl font-semibold text-foreground/15 transition-colors duration-300 group-hover:text-foreground/25">
-                  {project.title.slice(0, 2).toUpperCase()}
+              {/* ── Preview image / screenshot / fallback ── */}
+              <div className="relative h-44 w-full overflow-hidden rounded-t-2xl border-b border-border">
+                <ProjectPreview project={project} priority={i < 2} />
+
+                {/* Arrow badge — appears on hover, top-right corner */}
+                <span className="absolute right-3 top-3 z-10 flex h-7 w-7 -translate-y-1 items-center justify-center rounded-full bg-background/80 opacity-0 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <ArrowUpRight size={14} className="text-foreground" />
                 </span>
-                <ArrowUpRight
-                  size={18}
-                  className="absolute right-4 top-4 -translate-y-1 text-foreground/40 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
-                />
               </div>
 
-              <h3 className="text-lg font-medium text-foreground">
-                {project.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {project.description}
-              </p>
+              {/* ── Card body ── */}
+              <div className="p-5">
+                <h3 className="text-base font-medium leading-snug text-foreground">
+                  {project.title}
+                </h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted line-clamp-2">
+                  {project.description}
+                </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-border px-2.5 py-1 font-mono text-[11px] text-muted"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-border px-2.5 py-0.5 font-mono text-[10px] text-muted"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.a>
           ))}

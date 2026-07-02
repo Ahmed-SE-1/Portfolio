@@ -1,7 +1,7 @@
-// ─────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 // Single source of truth for portfolio content.
 // Edit this file to make the site yours — nothing else needs to change.
-// ─────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 
 export const profile = {
   name: "Ahmed Ali",
@@ -12,7 +12,7 @@ export const profile = {
   description:
     "I'm a software engineer with 2 years of hands-on experience bridging the gap between performant backends and pixel-perfect interfaces. From web applications to cross-platform mobile apps, I focus on intuitive, user-centric engineering.",
   email: "ahmedaliqurexhi7867@gmail.com",
-  resumeUrl: "/resume.pdf", // Place your resume PDF in the public folder named 'resume.pdf'
+  resumeUrl: "/resume.pdf",
   availableForWork: true,
 };
 
@@ -36,6 +36,11 @@ export const philosophy = [
       "I architecture full-stack systems using Node.js and modern databases. Code should not just work—it must scale seamlessly under production loads.",
   },
   {
+    title: "AI & ML",
+    description:
+      "I leverage artificial intelligence and machine learning to build intelligent applications that can learn and adapt to user needs.",
+  },
+  {
     title: "Interfaces",
     description:
       "Whether it's React, Next.js, or Tailwind CSS, I treat UI as a product's handshake with the user. Fluid, intuitive, and visually pristine.",
@@ -50,16 +55,57 @@ export const philosophy = [
     description:
       "Operating with Agile methodologies means building iteratively, deploying with confidence, and optimizing performance metrics constantly.",
   },
+  {
+    title: "Automation",
+    description:
+      "I automate the manual workflow processes, saving time and reducing human error.",
+  },
 ];
 
-export const projects = [
+export type ProjectSize = "large" | "medium" | "small";
+
+export interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  href: string;
+  size: ProjectSize;
+  /**
+   * Optional manual cover image path (relative to /public).
+   * e.g. "/projects/smartassist.png"
+   *
+   * If omitted:
+   *  - Live web URLs → auto-screenshot via microlink.io
+   *  - GitHub / non-web URLs → polished gradient fallback with initials
+   */
+  image?: string;
+}
+
+export const projects: Project[] = [
   {
     title: "SMARTASSIST - Smart Home System for Disabled People",
     description:
       "An application that provides a smart home system for disabled people, allowing them to control their home appliances and devices using voice commands and gestures.",
     tags: ["Flutter", "Dart", "Firebase", "IoT", "Voice Recognition (NLP)", "SIGN-DETR", "TensorFlow Lite"],
     href: "https://github.com/Ahmed-SE-1/Smart-Assist",
-    size: "large" as const,
+    size: "large",
+    image: "/projects-image/smartassist_banner.png",
+  },
+  {
+    title: "Lumiere Makeup",
+    description:
+      "A beauty-focused e-commerce platform with a sleek, modern design and seamless user experience.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "REST API", "Superbase"],
+    href: "https://lumiere-makeup.vercel.app/",
+    size: "large",
+  },
+  {
+    title: "Proposal Generator",
+    description:
+      "A proposal generator that uses AI models to create professional proposals for upwork/fiver and also generate job application emails & cover letter.",
+    tags: ["Next", "TypeScript", "AI Model", "Gemini Flash", "Grok", "Tailwind CSS"],
+    href: "https://proposal-pro-lovat.vercel.app/",
+    size: "medium",
   },
   {
     title: "Nexus Business Startup",
@@ -67,7 +113,7 @@ export const projects = [
       "A modern corporate platform built for scale, featuring high-fidelity styling and type-safe data flows.",
     tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     href: "https://bussiness-startup.vercel.app/login",
-    size: "medium" as const,
+    size: "medium",
   },
   {
     title: "Depresso Haus",
@@ -75,15 +121,15 @@ export const projects = [
       "A highly aesthetic web experience optimized for structural speed and polished visual presentation.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     href: "https://depresso-haus.vercel.app/",
-    size: "medium" as const,
+    size: "medium",
   },
   {
     title: "POS System & Admin Dashboard",
     description:
       "A highly aesthetic web experience for POS and Admin dashboard, optimized for structural speed and polished visual presentation.",
-    tags: ["Next.js", "Tailwind CSS", "Strapi", "REST API"],
+    tags: ["Next.js", "Tailwind CSS", "Supabase", "REST API"],
     href: "https://depresso-admin-dashboard.vercel.app/login",
-    size: "medium" as const,
+    size: "medium",
   },
   {
     title: "Nova Streaming",
@@ -91,15 +137,16 @@ export const projects = [
       "A fast cross-platform video downloading utility application engineered with a clean native UI.",
     tags: ["Flutter", "Dart", "Mobile API"],
     href: "https://github.com/Ahmed-SE-1/Nova-Streaming-Video-Downloader-App-",
-    size: "medium" as const,
+    size: "medium",
+    // image: "/projects/nova-streaming.png",  ← drop your cover here when ready
   },
   {
     title: "Herbal E-Commerce",
     description:
       "Full-stack digital commerce platform featuring seamless server-side routing and database management.",
-    tags: ["Node.js", "Express", "MongoDB", "REST API"],
+    tags: ["Node.js", "Express", "MongoDB", "REST API", "Admin Dashboard"],
     href: "https://herbal-hxms.onrender.com/",
-    size: "small" as const,
+    size: "small",
   },
   {
     title: "Phishing Simulation",
@@ -107,7 +154,8 @@ export const projects = [
       "A Python-based email simulation tool designed to educate users on phishing threats, complete with SMTP integration and SQLite database support.",
     tags: ["Python", "SMTP", "SQLite"],
     href: "https://github.com/Ahmed-SE-1/Phishing-Email-Simulation",
-    size: "small" as const,
+    size: "small",
+    // image: "/projects/phishing-simulation.png",  ← drop your cover here when ready
   },
   {
     title: "Zullbery Clone",
@@ -115,7 +163,7 @@ export const projects = [
       "An end-to-end replication of a high-traffic e-commerce portal utilizing robust backend workflows.",
     tags: ["Node.js", "Express", "Database Optimization"],
     href: "https://zullbery.onrender.com/",
-    size: "small" as const,
+    size: "small",
   },
   {
     title: "Brand Shopping",
@@ -123,7 +171,7 @@ export const projects = [
       "A vibrant storefront application featuring heavy emphasis on responsive UI components and fast asset rendering.",
     tags: ["React", "Vite", "Tailwind CSS"],
     href: "https://brand-shopping-theta.vercel.app/",
-    size: "small" as const,
+    size: "small",
   },
 ];
 
