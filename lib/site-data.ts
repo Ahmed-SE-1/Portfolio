@@ -147,15 +147,15 @@ export const projects: Project[] = [
     tags: ["Node.js", "Express", "MongoDB", "REST API", "Admin Dashboard"],
     href: "https://herbal-hxms.onrender.com/",
     size: "small",
+    image: "/projects-image/Herb.png",
   },
   {
     title: "Phishing Simulation",
     description:
       "A Python-based email simulation tool designed to educate users on phishing threats, complete with SMTP integration and SQLite database support.",
     tags: ["Python", "SMTP", "SQLite"],
-    href: "https://github.com/Ahmed-SE-1/Phishing-Email-Simulation",
+    href: "https://phishingsimulation-1.onrender.com/",
     size: "small",
-    // image: "/projects/phishing-simulation.png",  ← drop your cover here when ready
   },
   {
     title: "Zullbery Clone",
@@ -164,6 +164,7 @@ export const projects: Project[] = [
     tags: ["Node.js", "Express", "Database Optimization"],
     href: "https://zullbery.onrender.com/",
     size: "small",
+    image: "/projects-image/Zullbery.png",
   },
   {
     title: "Brand Shopping",
