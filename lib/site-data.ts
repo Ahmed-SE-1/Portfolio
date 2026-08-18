@@ -99,6 +99,15 @@ export const projects: Project[] = [
     href: "https://lumiere-makeup.vercel.app/",
     size: "large",
   },
+    {
+    title: "TinyChat",
+    description:
+      "A WhatsApp-style real-time chat app with direct messaging, live presence, read receipts, unread indicators, and delete-for-me/everyone controls.",
+    tags: ["React.js", "Vite", "Node.js", "Express.js", "Socket.IO", "MongoDB", "JWT", "Multer"],
+    href: "https://tiny-chat.vercel.app/",
+    size: "small",
+    image: "/projects-image/TinyChat.png",
+  },
   {
     title: "Proposal Generator",
     description:
@@ -123,6 +132,7 @@ export const projects: Project[] = [
     href: "https://depresso-haus.vercel.app/",
     size: "medium",
   },
+
   {
     title: "POS System & Admin Dashboard",
     description:
@@ -130,6 +140,15 @@ export const projects: Project[] = [
     tags: ["Next.js", "Tailwind CSS", "Supabase", "REST API"],
     href: "https://depresso-admin-dashboard.vercel.app/login",
     size: "medium",
+  },
+   {
+    title: "Sana Safinaz Clone",
+    description:
+      "A full-stack e-commerce clone replicating a Sana Safinaz-style shopping experience with product browsing, cart, wishlist, checkout, and admin management.",
+    tags: ["Node.js", "Express.js", "MongoDB", "Mongoose", "EJS", "bcrypt", "Multer", "Express Session"],
+    href: "https://sana-safinaz-clone-tau.vercel.app/",
+    size: "small",
+    image: "/projects-image/SanaSafinaz.png",
   },
   {
     title: "Nova Streaming",
@@ -140,15 +159,7 @@ export const projects: Project[] = [
     size: "medium",
     // image: "/projects/nova-streaming.png",  ← drop your cover here when ready
   },
-  {
-    title: "Herbal E-Commerce",
-    description:
-      "Full-stack digital commerce platform featuring seamless server-side routing and database management.",
-    tags: ["Node.js", "Express", "MongoDB", "REST API", "Admin Dashboard"],
-    href: "https://herbal-hxms.onrender.com/",
-    size: "small",
-    image: "/projects-image/Herb.png",
-  },
+ 
   {
     title: "Phishing Simulation",
     description:
@@ -157,15 +168,7 @@ export const projects: Project[] = [
     href: "https://phishingsimulation-1.onrender.com/",
     size: "small",
   },
-  {
-    title: "Zullbery Clone",
-    description:
-      "An end-to-end replication of a high-traffic e-commerce portal utilizing robust backend workflows.",
-    tags: ["Node.js", "Express", "Database Optimization"],
-    href: "https://zullbery.onrender.com/",
-    size: "small",
-    image: "/projects-image/Zullbery.png",
-  },
+
   {
     title: "Brand Shopping",
     description:
